@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<form action="/Home/AddNewUser">
+    <label>Username:</label><input type="text" name="Username" placeholder="AlphaNumeric 4-15 Length" pattern="^[a-zA-Z0-9]{4,15}$" />
+    <label>Password:</label><input type="password" name="Password" pattern="^[a-zA-Z0-9!#$%^&*]{4,15}$" />
+    <label>Email:</label><input type="email" name="Email" placeholder="example@email.com" title="50 Character Limit" pattern="^\w{,50}$" />
+    <label>Phone:</label><input type="text" name="Phone" placeholder="1112223333" pattern="^\d{10}$" />
+</form>

@@ -1,7 +1,39 @@
 ﻿@{
     ViewBag.Title = "About";
+    ViewBag.UserSession = new Lab23.Models.Session();
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+@if(Request.Cookies["SessionID"] != null)
+{
+<p>
+    @ViewBag.UserSession.SessionID.ToString();
+    @ViewBag.UserSession.LogoffTime.ToString();
+</p>
+}
+@if (ViewBag.UserSession != null)
+{
+    <h1>@ViewBag.UserSession.ToString()</h1>
+}
+
+    <div>
+        @*{
+            foreach (var session in ViewBag.SessionList)
+            {
+
+                <div class="panel-group col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            @session.SessionID
+                        </div>
+                        <div class="panel-body">
+                            @session.LogoffTime
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }*@
+    </div>
